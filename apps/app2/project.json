@@ -5,5 +5,16 @@
   "projectType": "application",
   "tags": [],
   "// targets": "to see all targets run: nx show project app2 --web",
-  "targets": {}
+  "targets": {
+    "publish-test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "parallel": false,
+        "envFile": ".tmp/apps/app2.env",
+        "commands": [
+          "echo $app_name"
+        ]
+      }
+    }
+  }
 }
